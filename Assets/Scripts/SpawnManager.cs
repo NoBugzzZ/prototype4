@@ -8,22 +8,39 @@ public class SpawnManager : MonoBehaviour
     public float bound = 8;
     public float delay = 3;
     public float interval = 3;
+    private int countPerWave = 1;
+    public int enemyCount;
+    public GameObject powerupPrefab;
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("Spawn", delay, interval);
+        SpawnEnemy();
+        SpawnPowerUp();
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        enemyCount = GameObject.FindGameObjectsWithTag("Enemy").Length;
+        if (enemyCount == 0)
+        {
+            SpawnEnemy();
+            SpawnPowerUp();
+        }
     }
 
-    void Spawn()
+    void SpawnEnemy()
     {
+        for(int i = 0; i < countPerWave; i++)
+        {
+            Instantiate(enemyPrefab, GenerateRandomPosition(), enemyPrefab.transform.rotation);
+        }
+        countPerWave++;
+    }
 
-        Instantiate(enemyPrefab, GenerateRandomPosition(), enemyPrefab.transform.rotation);
+    void SpawnPowerUp()
+    {
+        Instantiate(powerupPrefab, GenerateRandomPosition(), powerupPrefab.transform.rotation);
     }
 
     Vector3 GenerateRandomPosition()
