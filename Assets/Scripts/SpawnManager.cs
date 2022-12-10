@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
-    public GameObject enemyPrefab;
+    public GameObject[] enemyPrefabs;
     public float bound = 8;
     public float delay = 3;
     public float interval = 3;
@@ -33,7 +33,8 @@ public class SpawnManager : MonoBehaviour
     {
         for(int i = 0; i < countPerWave; i++)
         {
-            Instantiate(enemyPrefab, GenerateRandomPosition(), enemyPrefab.transform.rotation);
+            int index = Random.Range(0, enemyPrefabs.Length);
+            Instantiate(enemyPrefabs[index], GenerateRandomPosition(), enemyPrefabs[index].transform.rotation);
         }
         countPerWave++;
     }

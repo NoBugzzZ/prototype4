@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.3069224, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028305, g: 0.22571313, b: 0.3069213, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -508,6 +508,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Island
       objectReference: {fileID: 0}
+    - target: {fileID: 1301643505922104, guid: 961be46ca9a355943ae3f65c47741bb0, type: 3}
+      propertyPath: m_TagString
+      value: Island
+      objectReference: {fileID: 0}
     - target: {fileID: 4625923886776944, guid: 961be46ca9a355943ae3f65c47741bb0, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -631,7 +635,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73054a35c7e9e6a4a914887e60f88ee2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 1681611804710534618, guid: e883ca59f00b2fb45a6af4ee3d084bcb, type: 3}
+  enemyPrefabs:
+  - {fileID: 1681611804710534618, guid: e883ca59f00b2fb45a6af4ee3d084bcb, type: 3}
+  - {fileID: 7014687185657585869, guid: 49978fed43d2440cda5aa8f4aaabbde8, type: 3}
   bound: 8
   delay: 3
   interval: 3
@@ -668,7 +674,7 @@ GameObject:
   - component: {fileID: 1616985370}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -766,6 +772,8 @@ MonoBehaviour:
   speed: 3
   isPowerUp: 0
   force: 20
+  bulletPrefab: {fileID: 8197240832466149628, guid: 29631f474345c4809a255669a313619b, type: 3}
+  attackRandius: 5
 --- !u!54 &1616985370
 Rigidbody:
   m_ObjectHideFlags: 0

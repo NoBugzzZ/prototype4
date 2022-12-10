@@ -6,6 +6,9 @@ TagManager:
   tags:
   - PowerUp
   - Enemy
+  - Powerup
+  - Harder Enemy
+  - Island
   layers:
   - Default
   - TransparentFX
